@@ -11,6 +11,7 @@ body {
 }
 
 body {
+    background: #FEFBF8;
     margin: 0 auto;
     max-width: 1200px;
     width: 100%;
@@ -43,8 +44,17 @@ button {
     cursor: pointer;
 }
 
-a {
-    background-color: transparent;
+.title a {
+    color: black;
+    text-decoration: none;
+}
+
+.title a:hover {
+    color: black;
+}
+
+.title a:visited {
+    color: black;
 }
 
 img {
@@ -66,8 +76,10 @@ h1 {
     margin-bottom: 2.5rem;
 }
 
-h1.title {
+.title {
     font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
 h2 {
@@ -100,4 +112,54 @@ p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
+}
+
+/* Header & Navigation */
+header {
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.25rem;
+    transition: border-color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    border-bottom-color: currentColor;
+}
+
+footer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #ccc;
+}
+
+footer address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+/* Mobile Navigation */
+@media (max-width: 600px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
