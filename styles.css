@@ -44,16 +44,16 @@ button {
 }
 
 .title a {
-    color: black;
+    color: inherit;
     text-decoration: none;
 }
 
 .title a:hover {
-    color: black;
+    color: inherit;
 }
 
 .title a:visited {
-    color: black;
+    color: inherit;
 }
 
 img {
