@@ -155,6 +155,15 @@ footer address {
     line-height: 1.6;
 }
 
+/* Services */
+.service-item {
+    margin-bottom: 2.5rem;
+}
+
+.service-item h3 {
+    margin-bottom: 0.5rem;
+}
+
 /* Mobile Navigation */
 @media (max-width: 600px) {
     .main-nav {
