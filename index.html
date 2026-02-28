@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Expert paediatric physiotherapy for babies, children and young adults in Dulwich, South London. HCPC registered. Book your child's assessment today.">
     <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#4A90D9">
     <meta name="keywords" content="paediatric physiotherapy Dulwich, children's physiotherapist South London, kids physio SE21">
     <meta name="geo.region" content="GB-LND">
     <meta name="geo.placename" content="Dulwich, London">
@@ -45,7 +44,7 @@
       "@id": "https://www.movewellkids.co.uk/#organization",
       "name": "MoveWell Kids Physiotherapy",
       "alternateName": "MoveWell Kids",
-      "description": "Specialist paediatric physiotherapy for babies, children and young adults in Dulwich and South London.",
+      "description": "Specialist paediatric physiotherapy for babies, children and young people in Dulwich and South London. Home visits only.",
       "url": "https://www.movewellkids.co.uk",
       "email": "admin@movewellkids.co.uk",
       "address": {
@@ -56,26 +55,28 @@
         "addressCountry": "GB"
       },
       "areaServed": [
-        { "@type": "Place", "name": "Dulwich" },
         { "@type": "Place", "name": "East Dulwich" },
-        { "@type": "Place", "name": "Herne Hill" },
-        { "@type": "Place", "name": "Forest Hill" },
-        { "@type": "Place", "name": "Brixton" },
-        { "@type": "Place", "name": "Camberwell" },
-        { "@type": "Place", "name": "Crystal Palace" },
-        { "@type": "Place", "name": "Sydenham" },
-        { "@type": "Place", "name": "Peckham" },
+        { "@type": "Place", "name": "Dulwich Village" },
+        { "@type": "Place", "name": "West Dulwich" },
         { "@type": "Place", "name": "West Norwood" },
-        { "@type": "Place", "name": "Streatham" }
+        { "@type": "Place", "name": "Tulse Hill" },
+        { "@type": "Place", "name": "Herne Hill" },
+        { "@type": "Place", "name": "Gipsy Hill" }
       ],
       "medicalSpecialty": "Physiotherapy",
       "availableService": [
         { "@type": "MedicalTherapy", "name": "Paediatric Physiotherapy Assessment" },
-        { "@type": "MedicalTherapy", "name": "Gross Motor Development Therapy" },
-        { "@type": "MedicalTherapy", "name": "Developmental Delay Physiotherapy" },
-        { "@type": "MedicalTherapy", "name": "Neurological Physiotherapy for Children" },
+        { "@type": "MedicalTherapy", "name": "Musculoskeletal Pain and Injury Physiotherapy" },
+        { "@type": "MedicalTherapy", "name": "Torticollis and Plagiocephaly Treatment (Baby MOT)" },
+        { "@type": "MedicalTherapy", "name": "Developmental Delay Physiotherapy (Baby MOT)" },
+        { "@type": "MedicalTherapy", "name": "Hypermobility and EDS Physiotherapy" },
+        { "@type": "MedicalTherapy", "name": "Gait Abnormality Assessment and Treatment" },
+        { "@type": "MedicalTherapy", "name": "Chronic Pain Management for Children" },
+        { "@type": "MedicalTherapy", "name": "Juvenile Arthritis Physiotherapy" },
         { "@type": "MedicalTherapy", "name": "Sports Injury Rehabilitation for Young People" },
-        { "@type": "MedicalTherapy", "name": "Hypermobility Physiotherapy" }
+        { "@type": "MedicalTherapy", "name": "Postural Assessment and Treatment" },
+        { "@type": "MedicalTherapy", "name": "Positional Talipes Physiotherapy" },
+        { "@type": "MedicalTherapy", "name": "Post-Surgical Rehabilitation for Children" }
       ],
       "currenciesAccepted": "GBP",
       "priceRange": "££"
@@ -83,25 +84,225 @@
     </script>
 </head>
 <body>
-    <header role="banner">
-        <div class="header-content">
-            <p class="title"><a href="index.html">MoveWell Kids Physiotherapy</a></p>
+
+    <!-- ======================================================
+         Header
+    ======================================================= -->
+    <header role="banner" id="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="site-logo">MoveWell <span>Kids</span></a>
+            <nav aria-label="Main navigation">
+                <ul class="main-nav">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li class="nav-cta">
+                        <a href="contact.html" class="btn btn-primary">Book an Assessment</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <main id="main" role="main">
-        <div class="container grid-3">
-            <h1>Welcome to MoveWell Kids Physiotherapy! We specialise in paediatric physiotherapy services to help children improve their mobility and overall well-being.</h1>
-            <p>We specialise in paediatric physiotherapy services to help babies, children and young adults improve their mobility and overall well-being. Our full website is coming soon.</p>
-        </div>
+
+        <!-- ======================================================
+             Hero
+        ======================================================= -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Paediatric Physiotherapy · Dulwich, SE21</span>
+                    <h1 id="hero-heading">Helping children move, grow and thrive</h1>
+                    <p class="lead">Specialist physiotherapy for babies, children and young people — delivered at home, with warmth, expertise and care across South London.</p>
+                    <div class="hero-actions">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Book an Assessment</a>
+                        <a href="services.html" class="btn btn-secondary btn-lg">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1576765974256-2e096c4d5e6b?w=900&auto=format&q=80"
+                        alt="A child working with a physiotherapist during a session"
+                        width="900"
+                        height="500"
+                        loading="eager"
+                    >
+                    <div class="hero-image-badge">
+                        <span class="badge-icon">✓</span>
+                        <span>HCPC Registered Physiotherapists</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================
+             Trust strip
+        ======================================================= -->
+        <section aria-label="Trust indicators" style="background: var(--color-surface); border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="trust-strip">
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">🏅</div>
+                        <div class="trust-badge-text">
+                            <strong>HCPC Registered</strong>
+                            <span>Fully qualified &amp; regulated</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">👶</div>
+                        <div class="trust-badge-text">
+                            <strong>Specialist Paediatric Physios</strong>
+                            <span>Dedicated children's expertise</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">🏠</div>
+                        <div class="trust-badge-text">
+                            <strong>Home Visits Only</strong>
+                            <span>I come to you</span>
+                        </div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">💬</div>
+                        <div class="trust-badge-text">
+                            <strong>Family-Centred Care</strong>
+                            <span>Parents involved at every step</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================
+             Services
+        ======================================================= -->
+        <section class="section section--alt" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="services-heading">How I can help your child</h2>
+                    <p>I work with babies, children and young people across a wide range of musculoskeletal and developmental conditions.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-icon card-icon--coral">🦴</div>
+                        <h3>Musculoskeletal Pain &amp; Injury</h3>
+                        <p>Assessment and treatment of joint, muscle and soft tissue pain or injury in children and young people.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon card-icon--sky">👶</div>
+                        <h3>Baby MOT</h3>
+                        <p>Specialist assessment for infants — including torticollis, plagiocephaly and developmental delay. Early intervention brings the best results.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon card-icon--sage">🤸</div>
+                        <h3>Hypermobility &amp; EDS</h3>
+                        <p>Assessment and management of joint hypermobility and hEDS in children and adolescents, addressing pain, instability and fatigue.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon card-icon--sun">🚶</div>
+                        <h3>Gait Abnormalities</h3>
+                        <p>Specialist assessment of walking patterns including toe walking, intoeing and out-toeing, with targeted treatment programmes.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon card-icon--coral">⚽</div>
+                        <h3>Sports Injury</h3>
+                        <p>Helping young athletes recover safely from sports injuries and return to the activities they love.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon card-icon--sky">🏥</div>
+                        <h3>Post-Surgical Rehabilitation</h3>
+                        <p>Structured rehabilitation following surgery, supporting children to safely regain strength, movement and function.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-lg" style="margin-top: var(--space-2xl);">
+                    <a href="services.html" class="btn btn-secondary">View all conditions</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================
+             About Preview
+        ======================================================= -->
+        <section class="section" aria-labelledby="about-heading">
+            <div class="container grid-2">
+                <div class="split-content">
+                    <h2 id="about-heading">15 years of specialist experience, at your door</h2>
+                    <p class="lead">With more than 15 years of experience working with children across the NHS and private practice, I bring both clinical expertise and genuine warmth to every session — in the comfort of your own home.</p>
+                    <p>I work closely with parents throughout the whole process, making sure treatment plans and home exercise programmes are practical and genuinely manageable for busy families.</p>
+                    <a href="about.html" class="btn btn-primary">About Rebecca</a>
+                </div>
+                <div>
+                    <img
+                        class="split-image"
+                        src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&auto=format&q=80"
+                        alt="Physiotherapist working gently with a young child"
+                        width="700"
+                        height="420"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================
+             CTA Banner
+        ======================================================= -->
+        <section class="section section--sky" aria-labelledby="cta-heading">
+            <div class="container cta-banner">
+                <h2 id="cta-heading">Ready to help your child thrive?</h2>
+                <p>Get in touch to book an initial assessment or simply ask us a question. We're here to help.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn btn-white btn-lg">Book an Assessment</a>
+                    <a href="mailto:admin@movewellkids.co.uk" class="btn btn-lg" style="color:#fff; border-color: rgba(255,255,255,0.5); border-width: 2px; border-style: solid; border-radius: var(--radius-pill); padding: 0.85rem 2rem;">Email us directly</a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <!-- ======================================================
+         Footer
+    ======================================================= -->
     <footer role="contentinfo">
-        <address>
-            <p><strong>MoveWell Kids Physiotherapy</strong></p>
-            <p>Dulwich, London, SE21</p>
-            <p><a href="mailto:admin@movewellkids.co.uk">Get in touch</a></p>
-        </address>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="site-logo">MoveWell <span>Kids</span></a>
+                    <p>Specialist paediatric physiotherapy for babies, children and young adults in Dulwich and across South London.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Get in Touch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <address class="footer-address">
+                        <p>Dulwich, London SE21</p>
+                        <p><a href="mailto:admin@movewellkids.co.uk">admin@movewellkids.co.uk</a></p>
+                        <p style="margin-top: var(--space-sm); font-size: 0.82rem; color: rgba(255,255,255,0.4);">East Dulwich, Dulwich Village, West Dulwich,<br>West Norwood, Tulse Hill, Herne Hill &amp; Gipsy Hill</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MoveWell Kids Physiotherapy. All rights reserved.</p>
+                <p>HCPC Registered · Based in London SE21</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Sticky header shadow on scroll
+        const header = document.getElementById('site-header');
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
+        window.addEventListener('scroll', onScroll, { passive: true });
+    </script>
+
 </body>
 </html>
