@@ -1060,6 +1060,121 @@ footer {
     mix-blend-mode: multiply;
 }
 
+/* 18b. Testimonials Carousel
+   ------------------------------------------------------------ */
+.testimonial-carousel {
+    position: relative;
+}
+
+.testimonial-page {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.testimonial-page.active {
+    display: grid;
+}
+
+.testimonial-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.testimonial-stars {
+    color: var(--color-sun);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.testimonial-quote {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-body);
+    font-style: italic;
+    flex: 1;
+    margin: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+}
+
+.testimonial-author strong {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+}
+
+.testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+.testimonial-prev,
+.testimonial-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+    flex-shrink: 0;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    background-color: var(--color-coral);
+    border-color: var(--color-coral);
+    color: #fff;
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.testimonial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-border);
+    cursor: pointer;
+    transition: background-color var(--transition), transform var(--transition);
+    padding: 0;
+}
+
+.testimonial-dot.active {
+    background: var(--color-coral);
+    transform: scale(1.4);
+}
+
 /* 19. Responsive
    ------------------------------------------------------------ */
 @media (max-width: 960px) {
@@ -1119,7 +1234,8 @@ footer {
     }
 
     .grid-3,
-    .steps {
+    .steps,
+    .testimonial-page {
         grid-template-columns: 1fr;
     }
 
