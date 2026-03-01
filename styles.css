@@ -265,6 +265,7 @@ header.scrolled {
 
 .site-logo span {
     color: var(--color-coral);
+    margin-left: -0.15em;
 }
 
 /* Nav */
