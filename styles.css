@@ -137,8 +137,8 @@ p {
 }
 
 .lead {
-    font-size: 1.15rem;
-    line-height: 1.7;
+    font-size: 1.8rem;
+    line-height: 1.5;
     color: var(--color-body);
 }
 
@@ -173,6 +173,10 @@ p {
 
 .section--coral {
     background-color: var(--color-coral-light);
+}
+
+.section--sage {
+    background-color: var(--color-sage-light);
 }
 
 .section--sky {
