@@ -965,8 +965,8 @@ nav[aria-label="Main navigation"] {
 /* 18. Footer
    ------------------------------------------------------------ */
 footer {
-    background-color: var(--color-text);
-    color: rgba(255, 255, 255, 0.75);
+    background-color: var(--color-bg-alt);
+    color: var(--color-body);
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-xl);
 }
@@ -979,19 +979,19 @@ footer {
 }
 
 .footer-brand .site-logo {
-    color: #fff;
+    color: var(--color-text);
     margin-bottom: var(--space-md);
     display: block;
 }
 
 .footer-brand p {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-muted);
     font-size: 0.9rem;
     max-width: 280px;
 }
 
 .footer-col h4 {
-    color: #fff;
+    color: var(--color-text);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1006,33 +1006,33 @@ footer {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--color-body);
     font-size: 0.92rem;
     transition: color var(--transition);
 }
 
 .footer-links a:hover {
-    color: #fff;
+    color: var(--color-text);
 }
 
 .footer-address {
     font-style: normal;
     font-size: 0.92rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--color-body);
 }
 
 .footer-address a {
-    color: var(--color-coral);
+    color: var(--color-sky);
     transition: color var(--transition);
 }
 
 .footer-address a:hover {
-    color: var(--color-coral-light);
+    color: var(--color-sky-dark);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid var(--color-border);
     padding-top: var(--space-lg);
     display: flex;
     justify-content: space-between;
@@ -1043,7 +1043,21 @@ footer {
 
 .footer-bottom p {
     font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-muted);
+}
+
+.footer-logos {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+.footer-logos img {
+    height: 48px;
+    width: auto;
+    mix-blend-mode: multiply;
 }
 
 /* 19. Responsive
