@@ -286,17 +286,19 @@ nav[aria-label="Main navigation"] {
 .main-nav li a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-body);
     text-decoration: none;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
     transition: color var(--transition), border-color var(--transition);
+    padding: 0.5rem 0.9rem;
 }
 
 .main-nav li a:hover,
 .main-nav li a[aria-current="page"] {
     color: var(--color-text);
-    border-bottom-color: var(--color-coral);
+    background-color: var(--color-coral-light);
+    border-radius: 10rem;
 }
 
 .nav-cta {
