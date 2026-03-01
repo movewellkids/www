@@ -1087,12 +1087,6 @@ footer {
     gap: var(--space-md);
 }
 
-.testimonial-stars {
-    color: var(--color-sun);
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-}
-
 .testimonial-quote {
     font-size: 0.95rem;
     line-height: 1.7;
