@@ -287,10 +287,6 @@ nav[aria-label="Main navigation"] {
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: transparent;
-    transition: color var(--transition), border-color var(--transition);
     padding: 0.5rem 0.9rem;
 }
 
@@ -299,6 +295,7 @@ nav[aria-label="Main navigation"] {
     color: var(--color-text);
     background-color: var(--color-coral-light);
     border-radius: 10rem;
+    text-decoration: none;
 }
 
 .nav-cta {
