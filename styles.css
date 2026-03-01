@@ -287,13 +287,13 @@ nav[aria-label="Main navigation"] {
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
-    padding: 0.5rem 0.9rem;
+    padding: 0.6rem;
 }
 
 .main-nav li a:hover,
 .main-nav li a[aria-current="page"] {
     color: var(--color-text);
-    background-color: var(--color-coral-light);
+    background-color: var(--color-bg);
     border-radius: 10rem;
     text-decoration: none;
 }
