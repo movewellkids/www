@@ -265,7 +265,8 @@ header.scrolled {
 
 .site-logo span {
     color: var(--color-coral);
-    margin-left: -0.15em;
+    display: inline-block;
+    transform: translateX(-0.1em);
 }
 
 /* Nav */
