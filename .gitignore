@@ -1,3 +1,19 @@
 .DS_Store
 .github/copilot-instructions.md
 www.code-movewellkids.code-workspace
+
+# Claude Code & IDE
+.claude/
+.vscode/
+
+# Environment & dependencies
+.env
+.env.local
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+Thumbs.db
