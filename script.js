@@ -1,57 +1,4 @@
 // =============================================================================
-// Theme toggle
-// =============================================================================
-(function () {
-  const THEME_KEY = 'mwk-theme';
-
-  function applyTheme(theme) {
-    if (theme === 'warm') {
-      document.documentElement.setAttribute('data-theme', 'warm');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-    const btn = document.querySelector('.theme-toggle');
-    if (btn) {
-      const label = theme === 'warm' ? 'Switch to default theme' : 'Switch to warm theme';
-      btn.setAttribute('aria-label', label);
-      btn.title = label;
-    }
-  }
-
-  function initThemeToggle() {
-    const saved = localStorage.getItem(THEME_KEY) || 'default';
-    applyTheme(saved);
-
-    const headerInner = document.querySelector('.header-inner');
-    if (!headerInner) return;
-
-    const btn = document.createElement('button');
-    btn.className = 'theme-toggle';
-    const label = saved === 'warm' ? 'Switch to default theme' : 'Switch to warm theme';
-    btn.setAttribute('aria-label', label);
-    btn.title = label;
-    headerInner.appendChild(btn);
-
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'default';
-      const next = current === 'warm' ? 'default' : 'warm';
-      localStorage.setItem(THEME_KEY, next);
-      applyTheme(next);
-    });
-  }
-
-  // Apply saved theme immediately to avoid flash of wrong theme
-  const _saved = localStorage.getItem(THEME_KEY);
-  if (_saved === 'warm') document.documentElement.setAttribute('data-theme', 'warm');
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initThemeToggle);
-  } else {
-    initThemeToggle();
-  }
-})();
-
-// =============================================================================
 // Header scroll shadow
 // =============================================================================
 const header = document.getElementById('site-header');
@@ -92,6 +39,51 @@ if (navToggle && mainNav) {
     });
   });
 }
+
+// =============================================================================
+// Testimonials carousel
+// =============================================================================
+(function () {
+  const carousel = document.querySelector('.testimonials-carousel');
+  if (!carousel) return;
+
+  const slides = Array.from(carousel.querySelectorAll('.testimonials-slide'));
+  const dotsContainer = carousel.querySelector('.testimonials-dots');
+  const prevBtn = carousel.querySelector('.testimonials-prev');
+  const nextBtn = carousel.querySelector('.testimonials-next');
+  let current = 0;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonials-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    slides[current].classList.remove('is-active');
+    slides[current].setAttribute('aria-hidden', 'true');
+    dotsContainer.children[current].classList.remove('is-active');
+    dotsContainer.children[current].setAttribute('aria-selected', 'false');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('is-active');
+    slides[current].setAttribute('aria-hidden', 'false');
+    dotsContainer.children[current].classList.add('is-active');
+    dotsContainer.children[current].setAttribute('aria-selected', 'true');
+  }
+
+  // Initialise first slide
+  slides[0].classList.add('is-active');
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+})();
 
 // =============================================================================
 // Scroll-triggered entrance animations

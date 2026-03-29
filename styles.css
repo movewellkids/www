@@ -24,6 +24,7 @@
     --color-sun:          #FFCF5C;
 
     /* Neutral / backgrounds */
+    --color-linen:        #FFFBF4;
     --color-bg:           #FEFCF9;
     --color-bg-alt:       #F5F8FF;
     --color-surface:      #FFFFFF;
@@ -171,12 +172,21 @@ p {
     background-color: var(--color-bg);
 }
 
+.section--white {
+    background-color: var(--color-surface);
+}
+
+.section--compact {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
 .section--coral {
     background-color: var(--color-coral-light);
 }
 
 .section--services {
-    background-color: var(--color-bg);
+    background-color: var(--color-surface);
 }
 
 .section--sky {
@@ -311,6 +321,7 @@ nav[aria-label="Main navigation"] {
     display: inline-flex;
     align-items: center;
     gap: var(--space-xs);
+    width: fit-content;
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
@@ -373,7 +384,7 @@ nav[aria-label="Main navigation"] {
 /* 8. Hero Section
    ------------------------------------------------------------ */
 .hero {
-    background-color: var(--color-bg);
+    background-color: var(--color-linen);
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-3xl);
 }
@@ -461,7 +472,7 @@ nav[aria-label="Main navigation"] {
     background-color: var(--color-surface);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-card);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     transition: transform var(--transition), box-shadow var(--transition);
     border: 1px solid var(--color-border);
 }
@@ -472,8 +483,9 @@ nav[aria-label="Main navigation"] {
 }
 
 .card-icon {
-    width: 56px;
-    height: 56px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -487,6 +499,12 @@ nav[aria-label="Main navigation"] {
 .card-icon--coral  { background-color: var(--color-coral-light); }
 .card-icon--sage   { background-color: var(--color-sage-light); }
 .card-icon--sun    { background-color: #FFF8E1; }
+
+.card-icon .icon,
+.card-icon .icon-md {
+    width: 1.25rem;
+    height: 1.25rem;
+}
 
 .card h3 {
     font-size: 1.1rem;
@@ -502,8 +520,35 @@ nav[aria-label="Main navigation"] {
 /* Service card variant (larger, 2-col grid) */
 .service-card {
     display: flex;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     align-items: flex-start;
+}
+
+/* Services list (no cards) */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl) var(--space-2xl);
+}
+
+.services-list-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+}
+
+.services-list-item p {
+    font-size: 0.92rem;
+    color: var(--color-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .services-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-card .card-icon {
@@ -645,7 +690,7 @@ nav[aria-label="Main navigation"] {
 .step {
     counter-increment: steps;
     position: relative;
-    padding-top: var(--space-xl);
+    padding-top: var(--space-2xl);
 }
 
 .step::before {
@@ -946,19 +991,18 @@ nav[aria-label="Main navigation"] {
    ------------------------------------------------------------ */
 .pricing-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
-    max-width: 840px;
     margin: var(--space-2xl) auto 0;
 }
 
 .pricing-card {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: var(--space-xl);
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: var(--space-sm);
     text-align: left;
-    padding: var(--space-2xl) var(--space-xl);
+    padding: var(--space-xl);
 }
 
 .pricing-icon {
@@ -971,7 +1015,7 @@ nav[aria-label="Main navigation"] {
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--color-text);
-    grid-column: 2;
+    grid-column: 1;
     margin: 0;
 }
 
@@ -981,7 +1025,7 @@ nav[aria-label="Main navigation"] {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    grid-column: 2;
+    grid-column: 1;
     margin: var(--space-xs) 0 0 0;
 }
 
@@ -991,7 +1035,8 @@ nav[aria-label="Main navigation"] {
     font-weight: 800;
     color: var(--color-coral);
     line-height: 1;
-    grid-column: 3;
+    grid-column: 2;
+    grid-row: 1;
     text-align: right;
     white-space: nowrap;
 }
@@ -1000,8 +1045,8 @@ nav[aria-label="Main navigation"] {
     font-size: 0.88rem;
     color: var(--color-muted);
     line-height: 1.7;
-    grid-column: 2;
-    margin: var(--space-md) 0 0 0;
+    grid-column: 1 / -1;
+    margin: var(--space-xs) 0 0 0;
 }
 
 /* 17. CTA Banner
@@ -1083,8 +1128,12 @@ footer {
 
 .footer-address {
     font-style: normal;
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-address p {
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -1115,6 +1164,127 @@ footer {
 /* Grid layout modifier — mobile first (base is single column) */
 .grid-2--thirds {
     grid-template-columns: 1fr;
+}
+
+/* Testimonials carousel
+   ------------------------------------------------------------ */
+.testimonials-section .section-header {
+    margin-bottom: var(--space-xl);
+}
+
+.testimonials-carousel {
+    position: relative;
+}
+
+.testimonials-track {
+    overflow: hidden;
+}
+
+.testimonials-slide {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.testimonials-slide.is-active {
+    display: grid;
+}
+
+.testimonial-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border: 1px solid var(--color-border);
+}
+
+.testimonial-card p {
+    font-size: 0.97rem;
+    color: var(--color-body);
+    line-height: 1.7;
+    flex: 1;
+    margin: 0;
+}
+
+.testimonial-card cite {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.testimonial-card cite strong {
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.testimonial-card cite span {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.testimonials-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.testimonials-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-body);
+    cursor: pointer;
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
+    padding: 0;
+}
+
+.testimonials-btn:hover {
+    border-color: var(--color-sky);
+    color: var(--color-sky);
+}
+
+.testimonials-btn svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.testimonials-dots {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.testimonials-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.testimonials-dot.is-active {
+    background: var(--color-sky);
+    transform: scale(1.3);
+}
+
+@media (max-width: 640px) {
+    .testimonials-slide {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* 19. Responsive
@@ -1511,6 +1681,7 @@ footer {
 
 [data-theme="warm"] {
     /* Base surfaces */
+    --color-linen:      #F5EFE6; /* warm linen — hero background */
     --color-bg:         #fff1eb; /* seashell — warm cream */
     --color-bg-alt:     #fde5d9; /* deeper seashell for alternate sections */
     --color-surface:    #ffffff;
