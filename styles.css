@@ -10,31 +10,31 @@
    ------------------------------------------------------------ */
 :root {
     /* Colour palette */
-    --color-sky:          #4A90D9;
-    --color-sky-dark:     #2F72BB;
-    --color-sky-light:    #EBF4FC;
+    --color-sky:          #720026;
+    --color-sky-dark:     #4a0019;
+    --color-sky-light:    #fce8eb;
 
-    --color-coral:        #F07A5A;
-    --color-coral-dark:   #D85F3D;
-    --color-coral-light:  #FFF0EB;
+    --color-coral:        #ce4257;
+    --color-coral-dark:   #a8303f;
+    --color-coral-light:  #fce8eb;
 
-    --color-sage:         #6DBF8A;
-    --color-sage-light:   #EDF7F1;
+    --color-sage:         #ff7f51;
+    --color-sage-light:   #fff0eb;
 
-    --color-sun:          #FFCF5C;
+    --color-sun:          #ff9b54;
 
     /* Neutral / backgrounds */
     --color-linen:        #FCF8F4;
     --color-blush:        #FBF2F6;
-    --color-bg:           #FEFCF9;
-    --color-bg-alt:       #F5F8FF;
-    --color-surface:      #FFFFFF;
-    --color-border:       #E5ECF2;
+    --color-bg:           #fff1eb;
+    --color-bg-alt:       #fde5d9;
+    --color-surface:      #ffffff;
+    --color-border:       #f0cdc4;
 
     /* Text */
-    --color-text:         #1A2B3C;
-    --color-body:         #4A5568;
-    --color-muted:        #5E6E7F;
+    --color-text:         #290025;
+    --color-body:         #3e1a28;
+    --color-muted:        #6b3548;
 
     /* Typography */
     --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -67,9 +67,9 @@
     --radius-pill: 999px;
 
     /* Shadows */
-    --shadow-card:    0 2px 12px rgba(26, 43, 60, 0.07);
-    --shadow-raised:  0 8px 32px rgba(26, 43, 60, 0.12);
-    --shadow-header:  0 2px 16px rgba(26, 43, 60, 0.08);
+    --shadow-card:    0 2px 12px rgba(41, 0, 37, 0.07);
+    --shadow-raised:  0 8px 32px rgba(41, 0, 37, 0.12);
+    --shadow-header:  0 2px 16px rgba(41, 0, 37, 0.08);
 
     /* Transitions */
     --transition: 0.2s ease;
@@ -264,7 +264,7 @@ header {
     top: 0;
     z-index: 100;
     background-color: var(--color-surface);
-    border-bottom: 1px solid #EDE8E3;
+    border-bottom: 1px solid #edd8d4;
     transition: box-shadow var(--transition);
 }
 
@@ -365,7 +365,7 @@ nav[aria-label="Main navigation"] {
 .btn-primary:hover {
     background-color: var(--color-coral-dark);
     border-color: var(--color-coral-dark);
-    box-shadow: 0 4px 16px rgba(240, 122, 90, 0.35);
+    box-shadow: 0 4px 16px rgba(206, 66, 87, 0.35);
 }
 
 .btn-secondary {
@@ -1027,8 +1027,8 @@ nav[aria-label="Main navigation"] {
 /* 16b. Quote Callout
    ------------------------------------------------------------ */
 .quote-callout {
-    background-color: var(--color-sky-light);
-    border-left: 3px solid var(--color-sky);
+    background-color: var(--color-coral-light);
+    border-left: 3px solid var(--color-coral);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     padding: var(--space-lg) var(--space-xl);
     margin: var(--space-xl) 0 0;
@@ -1045,8 +1045,8 @@ nav[aria-label="Main navigation"] {
     display: flex;
     align-items: flex-start;
     gap: var(--space-md);
-    background-color: var(--color-sky-light);
-    border: 1px solid rgba(74, 144, 217, 0.25);
+    background-color: var(--color-coral-light);
+    border: 1px solid rgba(206, 66, 87, 0.2);
     border-radius: var(--radius-md);
     padding: var(--space-lg) var(--space-xl);
     margin-bottom: var(--space-2xl);
@@ -1170,7 +1170,7 @@ nav[aria-label="Main navigation"] {
 /* 18. Footer
    ------------------------------------------------------------ */
 footer {
-    background: linear-gradient(160deg, #1A2B3C 0%, #1E3347 100%);
+    background: #290025;
     color: rgba(255, 255, 255, 0.75);
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-xl);
@@ -1789,147 +1789,3 @@ footer {
     .page-hero::after { display: none; }
 }
 
-/* =============================================================================
-   WARM THEME  (data-theme="warm")
-   Palette: Seashell base · Amaranth accents · Midnight Violet text
-   No gradients. Bold colors used sparingly.
-   ============================================================================= */
-
-[data-theme="warm"] {
-    /* Base surfaces */
-    --color-linen:      #FCF8F4; /* warm linen — hero background */
-    --color-bg:         #fff1eb; /* seashell — warm cream */
-    --color-bg-alt:     #fde5d9; /* deeper seashell for alternate sections */
-    --color-surface:    #ffffff;
-    --color-border:     #f0cdc4; /* soft warm blush border */
-
-    /* Text */
-    --color-text:       #290025; /* midnight-violet — headings */
-    --color-body:       #3e1a28; /* rich dark warm — body copy */
-    --color-muted:      #6b3548; /* medium warm — passes WCAG AA on seashell */
-
-    /* Primary (replaces sky blue) — dark-amaranth, used sparingly */
-    --color-sky:        #720026;
-    --color-sky-light:  #fce8eb;
-
-    /* Secondary accent (replaces coral) — amaranth */
-    --color-coral:      #ce4257;
-    --color-coral-light:#fce8eb;
-
-    /* Tertiary (replaces sage green) — coral-glow */
-    --color-sage:       #ff7f51;
-    --color-sage-light: #fff0eb;
-
-    /* Accent (replaces sun yellow) — sandy-brown */
-    --color-sun:        #ff9b54;
-
-    /* Shadows — warmer tint */
-    --shadow-card:   0 2px 12px rgba(41, 0, 37, 0.07);
-    --shadow-raised: 0 8px 32px rgba(41, 0, 37, 0.12);
-    --shadow-header: 0 2px 16px rgba(41, 0, 37, 0.08);
-}
-
-/* Button primary hover */
-[data-theme="warm"] .btn-primary:hover {
-    background-color: #a8303f;
-    border-color: #a8303f;
-    box-shadow: 0 4px 16px rgba(206, 66, 87, 0.35);
-}
-
-/* Header border */
-[data-theme="warm"] header {
-    border-bottom-color: #EDE8E3;
-}
-
-/* Footer — solid midnight-violet, no gradient */
-[data-theme="warm"] footer {
-    background: #290025;
-}
-
-/* CTA warm section — flat, no gradient */
-[data-theme="warm"] .section--cta-warm {
-    background: #fde5d9;
-}
-
-/* Sky section — dark-amaranth solid */
-[data-theme="warm"] .section--sky {
-    background-color: #720026;
-}
-
-/* Alt section dot texture — amaranth dots */
-
-/* Page hero decorative shape — light amaranth tint */
-[data-theme="warm"] .page-hero::after {
-    background: #fce8eb;
-}
-
-/* Quote callout accent */
-[data-theme="warm"] .quote-callout {
-    border-left-color: #ce4257;
-    background: #fce8eb;
-}
-
-/* Home visit note */
-[data-theme="warm"] .home-visit-note {
-    background: #fce8eb;
-    border-color: #f0cdc4;
-}
-
-
-/* Service card featured variant */
-[data-theme="warm"] .service-card--featured {
-    background-color: #fff;
-}
-[data-theme="warm"] .service-card--secondary {
-    background-color: #fff;
-}
-
-/* =============================================================================
-   THEME TOGGLE BUTTON
-   ============================================================================= */
-
-.theme-toggle {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    border: 2px solid var(--color-border);
-    cursor: pointer;
-    flex-shrink: 0;
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-    background: none;
-}
-.theme-toggle::before,
-.theme-toggle::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-}
-/* Default theme swatch: left = sky blue, right = warm amaranth preview */
-.theme-toggle::before {
-    left: 0;
-    background: #4A90D9;
-}
-.theme-toggle::after {
-    right: 0;
-    background: #720026;
-}
-/* When warm theme is active, flip the swatch */
-[data-theme="warm"] .theme-toggle::before {
-    background: #720026;
-}
-[data-theme="warm"] .theme-toggle::after {
-    background: #4A90D9;
-}
-.theme-toggle:hover {
-    transform: scale(1.15);
-    border-color: var(--color-coral);
-}
-.theme-toggle:focus-visible {
-    outline: 3px solid var(--color-sky);
-    outline-offset: 3px;
-}

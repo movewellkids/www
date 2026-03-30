@@ -25,23 +25,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css?v=20260330">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
     <title>Get in Touch | MoveWell Kids Physiotherapy</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
     <script src="script.js" defer></script>
 </head>
-<body data-theme="warm">
+<body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
   <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
-  <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
-  <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-  <symbol id="icon-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></symbol>
-  <symbol id="icon-map-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-  <symbol id="icon-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
-  <symbol id="icon-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
-  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.56 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
 </svg>
 
     <!-- Header -->
@@ -73,217 +64,41 @@
         </section>
 
         <!-- Contact section -->
-        <section class="section section--white" aria-labelledby="contact-heading">
-            <div class="container grid-2 align-start gap-2xl">
+        <section class="section section--white" aria-labelledby="areas-heading">
+            <div class="container grid-2 grid-2--top-align">
 
                 <div>
-                    <h2 id="contact-heading" class="mb-lg">Contact details</h2>
-                    <div class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-item-icon">
-                                <svg class="icon icon-md" style="color: var(--color-sky)"><use href="#icon-mail"/></svg>
-                            </div>
-                            <div class="contact-item-text">
-                                <strong>Email us</strong>
-                                <a href="mailto:hello@movewellkids.co.uk">hello@movewellkids.co.uk</a>
-                                <p class="mt-xs text-sm text-muted">We aim to respond within one working day.</p>
-                            </div>
+                    <h2 id="areas-heading" class="mb-lg">Areas covered</h2>
+                    <p class="mb-lg">I currently offer home visits across the following areas of South London:</p>
+                    <ul class="areas-list">
+                        <li>East Dulwich (SE22)</li>
+                        <li>Dulwich Village (SE21)</li>
+                        <li>West Dulwich (SE21)</li>
+                        <li>West Norwood (SE27)</li>
+                        <li>Tulse Hill (SE21)</li>
+                        <li>Herne Hill (SE24)</li>
+                        <li>Gipsy Hill (SE19)</li>
+                    </ul>
+                    <p class="text-sm mt-lg">Not sure if you're in the area? Just <a href="mailto:hello@movewellkids.co.uk" class="link-sky">drop me a message</a> and I'll let you know.</p>
+                </div>
+
+                <div>
+                    <h2 class="mb-lg">Email Rebecca</h2>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg class="icon icon-md" style="color: var(--color-sky)"><use href="#icon-mail"/></svg>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">
-                                <svg class="icon icon-md" style="color: var(--color-sky)"><use href="#icon-home"/></svg>
-                            </div>
-                            <div class="contact-item-text">
-                                <strong>Home Visits</strong>
-                                <p>I come to you — no clinic to travel to</p>
-                                <p class="text-sm text-muted">Covering East Dulwich, Dulwich Village, West Dulwich, West Norwood, Tulse Hill, Herne Hill and Gipsy Hill.</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">
-                                <svg class="icon icon-md" style="color: var(--color-sky)"><use href="#icon-shield"/></svg>
-                            </div>
-                            <div class="contact-item-text">
-                                <strong>Registration</strong>
-                                <p>HCPC Registered Physiotherapists</p>
-                                <p class="text-sm text-muted">All our physiotherapists are fully registered with the Health and Care Professions Council.</p>
-                            </div>
+                        <div class="contact-item-text">
+                            <strong>Email us</strong>
+                            <a href="mailto:hello@movewellkids.co.uk">hello@movewellkids.co.uk</a>
+                            <p class="mt-xs text-sm">I aim to respond within one working day.</p>
                         </div>
                     </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Areas Served -->
-        <section class="section section--alt" aria-labelledby="areas-heading">
-            <div class="container">
-                <h2 id="areas-heading" class="text-center mb-2xl">Areas covered</h2>
-                <div class="grid-2">
-                    <div>
-                        <div id="service-area-map" style="height: 400px; border-radius: 8px; overflow: hidden;"></div>
-                    </div>
-                    <div>
-                        <p class="text-muted mb-lg">I currently offer home visits across the following areas of South London:</p>
-                        <ul class="areas-list">
-                            <li>East Dulwich (SE22)</li>
-                            <li>Dulwich Village (SE21)</li>
-                            <li>West Dulwich (SE21)</li>
-                            <li>West Norwood (SE27)</li>
-                            <li>Tulse Hill (SE21)</li>
-                            <li>Herne Hill (SE24)</li>
-                            <li>Gipsy Hill (SE19)</li>
-                        </ul>
-                        <p class="text-sm text-muted mt-lg">Not sure if you're in the area? Just <a href="mailto:hello@movewellkids.co.uk" class="link-sky">drop me a message</a> and I'll let you know.</p>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
-
-    <script>
-    // Initialize service area map when Leaflet is ready
-    function initializeServiceAreaMap() {
-      const mapElement = document.getElementById('service-area-map');
-      if (!mapElement || typeof L === 'undefined') {
-        setTimeout(initializeServiceAreaMap, 100);
-        return;
-      }
-
-      const map = L.map('service-area-map').setView([51.42, -0.085], 13);
-
-      // Use CartoDB Positron for minimal, clean tile style
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-        attribution: '© OpenStreetMap contributors, © CartoDB',
-        maxZoom: 19,
-        className: 'map-tiles'
-      }).addTo(map);
-
-      // Add labels separately so they're on top
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-        attribution: '',
-        maxZoom: 19,
-        className: 'map-labels'
-      }).addTo(map);
-
-      // Load UK postcode district boundaries from Postcodes.io area endpoint
-      const outcodes = ['SE19', 'SE21', 'SE22', 'SE24', 'SE27'];
-
-      Promise.all(outcodes.map(code =>
-        fetch(`https://api.postcodes.io/outcodes/${code}`)
-          .then(r => r.json())
-          .then(data => {
-            if (data.result) {
-              const result = data.result;
-              return {
-                type: 'Feature',
-                properties: { name: code },
-                geometry: {
-                  type: 'Polygon',
-                  coordinates: [calculatePolygonBounds(
-                    result.longitude,
-                    result.latitude,
-                    code
-                  )]
-                }
-              };
-            }
-            return null;
-          })
-          .catch(() => null)
-      ))
-      .then(features => {
-        const validFeatures = features.filter(f => f !== null);
-        if (validFeatures.length > 0) {
-          L.geoJSON({ type: 'FeatureCollection', features: validFeatures }, {
-            style: {
-              color: '#F07A5A',
-              weight: 2,
-              opacity: 0.7,
-              fill: true,
-              fillColor: '#F07A5A',
-              fillOpacity: 0.2
-            },
-            onEachFeature: (feature, layer) => {
-              const name = feature.properties.name || 'Service Area';
-              layer.bindPopup(`<strong>${name}</strong>`);
-            }
-          }).addTo(map);
-        } else {
-          loadFallbackPostcodes(map);
-        }
-      })
-      .catch(() => {
-        loadFallbackPostcodes(map);
-      });
-
-      // Calculate approximate polygon bounds for each postcode area
-      function calculatePolygonBounds(lon, lat, code) {
-        // Radius varies by postcode density
-        const radius = {
-          'SE19': 0.015,
-          'SE21': 0.025,
-          'SE22': 0.018,
-          'SE24': 0.018,
-          'SE27': 0.020
-        }[code] || 0.020;
-
-        return [
-          [lon - radius, lat - radius],
-          [lon + radius, lat - radius],
-          [lon + radius, lat + radius],
-          [lon - radius, lat + radius],
-          [lon - radius, lat - radius]
-        ];
-      }
-    }
-
-    // Fallback postcode boundaries as approximate GeoJSON polygons
-    function loadFallbackPostcodes(map) {
-      const postcodes = [
-        {
-          name: 'SE19 (Gipsy Hill)',
-          bounds: [[51.4105, -0.1015], [51.4065, -0.0955], [51.4045, -0.0955], [51.4085, -0.1015]]
-        },
-        {
-          name: 'SE21 (Dulwich)',
-          bounds: [[51.4380, -0.1150], [51.4100, -0.1150], [51.4100, -0.0640], [51.4380, -0.0640]]
-        },
-        {
-          name: 'SE22 (East Dulwich)',
-          bounds: [[51.4250, -0.0500], [51.4050, -0.0500], [51.4050, -0.0750], [51.4250, -0.0750]]
-        },
-        {
-          name: 'SE24 (Herne Hill)',
-          bounds: [[51.4500, -0.1050], [51.4300, -0.1050], [51.4300, -0.0850], [51.4500, -0.0850]]
-        },
-        {
-          name: 'SE27 (West Norwood)',
-          bounds: [[51.4150, -0.1250], [51.3950, -0.1250], [51.3950, -0.1000], [51.4150, -0.1000]]
-        }
-      ];
-
-      postcodes.forEach(postcode => {
-        const polygon = L.polygon(postcode.bounds, {
-          color: '#F07A5A',
-          weight: 2,
-          opacity: 0.7,
-          fill: true,
-          fillColor: '#F07A5A',
-          fillOpacity: 0.2
-        })
-        .bindPopup(`<strong>${postcode.name}</strong>`)
-        .addTo(map);
-      });
-    }
-
-    // Initialize when page is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initializeServiceAreaMap);
-    } else {
-      initializeServiceAreaMap();
-    }
-    </script>
 
     <!-- Footer -->
     <footer role="contentinfo">
