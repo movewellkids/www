@@ -53,36 +53,43 @@ if (navToggle && mainNav) {
   const nextBtn = carousel.querySelector('.testimonials-next');
   let current = 0;
 
+  function isMobile() { return window.innerWidth <= 640; }
+
   // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
-    dot.className = 'testimonials-dot' + (i === 0 ? ' is-active' : '');
+    dot.className = 'testimonials-dot';
     dot.setAttribute('role', 'tab');
     dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    dot.setAttribute('aria-selected', 'false');
     dot.addEventListener('click', () => goTo(i));
     dotsContainer.appendChild(dot);
   });
 
-  function goTo(index) {
-    slides[current].classList.remove('is-active');
-    slides[current].setAttribute('aria-hidden', 'true');
-    dotsContainer.children[current].classList.remove('is-active');
-    dotsContainer.children[current].setAttribute('aria-selected', 'false');
-
-    current = (index + slides.length) % slides.length;
-
-    slides[current].classList.add('is-active');
-    slides[current].setAttribute('aria-hidden', 'false');
-    dotsContainer.children[current].classList.add('is-active');
-    dotsContainer.children[current].setAttribute('aria-selected', 'true');
+  function showSlides() {
+    const showTwo = !isMobile();
+    slides.forEach((s, i) => {
+      const active = i === current || (showTwo && i === (current + 1) % slides.length);
+      s.classList.toggle('is-active', active);
+      s.setAttribute('aria-hidden', active ? 'false' : 'true');
+    });
+    Array.from(dotsContainer.children).forEach((d, i) => {
+      const active = i === current;
+      d.classList.toggle('is-active', active);
+      d.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
   }
 
-  // Initialise first slide
-  slides[0].classList.add('is-active');
+  function goTo(index) {
+    current = ((index % slides.length) + slides.length) % slides.length;
+    showSlides();
+  }
 
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
+  // Initialise
+  showSlides();
+
+  prevBtn.addEventListener('click', () => goTo(current - (isMobile() ? 1 : 2)));
+  nextBtn.addEventListener('click', () => goTo(current + (isMobile() ? 1 : 2)));
 })();
 
 // =============================================================================
