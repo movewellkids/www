@@ -73,6 +73,62 @@
 
     /* Transitions */
     --transition: 0.2s ease;
+
+    /* ── New palette candidates (preview only — not yet applied to site) ── */
+
+    /* Background -50 array — all hsl(*°, ~45-65%, 97%) · 12 hues across full wheel */
+    --new-bg-blush:       #FBF4F5;  /* hsl(350, 50%, 97%) — warm rose */
+    --new-bg-coral:       #FCF6F4;  /* hsl( 15, 55%, 97%) — salmon */
+    --new-bg-peach:       #FCF8F4;  /* hsl( 28, 56%, 97%) — linen/peach */
+    --new-bg-amber:       #FCF9F3;  /* hsl( 40, 60%, 97%) — warm amber */
+    --new-bg-butter:      #FDFBF3;  /* hsl( 58, 70%, 97%) — pale yellow */
+    --new-bg-lime:        #F8FCF4;  /* hsl( 85, 50%, 97%) — very light green */
+    --new-bg-mint:        #F4FBF8;  /* hsl(155, 45%, 97%) — cool mint */
+    --new-bg-teal:        #F4FBFB;  /* hsl(175, 45%, 97%) — light teal */
+    --new-bg-sky:         #F4F8FC;  /* hsl(205, 50%, 97%) — pale blue */
+    --new-bg-periwinkle:  #F5F6FB;  /* hsl(230, 45%, 97%) — blue-purple */
+    --new-bg-lavender:    #F8F5FB;  /* hsl(270, 45%, 97%) — soft purple */
+    --new-bg-mauve:       #FBF5FA;  /* hsl(310, 45%, 97%) — pink-purple */
+
+    /* Primary hue options — paired with bg-* array · bumped saturation + brightness */
+    --new-primary-blush:       #D40D2F;  /* hsl(350°) vivid rose */
+    --new-primary-coral:       #D44010;  /* hsl( 15°) vivid burnt coral */
+    --new-primary-peach:       #D46800;  /* hsl( 28°) vivid warm orange */
+    --new-primary-amber:       #C48C00;  /* hsl( 40°) vivid golden amber */
+    --new-primary-butter:      #F2C200;  /* hsl( 48°) vivid sunny yellow — use dark text */
+    --new-primary-lime:        #4A9200;  /* hsl( 87°) vivid leaf green */
+    --new-primary-mint:        #008A56;  /* hsl(155°) vivid emerald */
+    --new-primary-teal:        #008A8A;  /* hsl(180°) vivid teal */
+    --new-primary-sky:         #0074CC;  /* hsl(210°) vivid blue */
+    --new-primary-periwinkle:  #3650D6;  /* hsl(231°) vivid indigo */
+    --new-primary-lavender:    #7840D6;  /* hsl(269°) vivid purple */
+    --new-primary-mauve:       #B81898;  /* hsl(310°) vivid plum */
+
+    /* Linen scale — warm neutral, hsl(28°) */
+    --new-linen-50:   #FCF8F4;
+    --new-linen-100:  #F7EEE3;
+    --new-linen-200:  #EDDAC9;
+    --new-linen-300:  #DFC3AA;
+    --new-linen-400:  #CDA684;
+    --new-linen-500:  #B9875B;
+    --new-linen-600:  #986B44;
+    --new-linen-700:  #725237;
+    --new-linen-800:  #513C29;
+    --new-linen-900:  #34281D;
+    --new-linen-950:  #1D1611;
+
+    /* Primary scale — crimson, hsl(340°) */
+    --new-primary-50:  #FAF5F7;
+    --new-primary-100: #F5E6EB;
+    --new-primary-200: #EFC8D5;
+    --new-primary-300: #EA86A7;
+    --new-primary-400: #EE2B6C;
+    --new-primary-500: #CC0044;
+    --new-primary-600: #A30036;
+    --new-primary-700: #85002C;
+    --new-primary-800: #720026;
+    --new-primary-900: #4D001A;
+    --new-primary-950: #2E000F;
 }
 
 /* 3. Reset & Normalize
@@ -561,7 +617,7 @@ nav[aria-label="Main navigation"] {
     margin-bottom: var(--space-lg);
 }
 
-/* Bento grid for infants */
+/* Bento grid for babies */
 .services-bento {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -640,6 +696,15 @@ nav[aria-label="Main navigation"] {
 }
 
 @media (max-width: 640px) {
+    .services-bento,
+    .services-bento--3col {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-item--large {
+        grid-column: 1;
+    }
+
     .services-list {
         grid-template-columns: 1fr;
     }
@@ -741,7 +806,9 @@ nav[aria-label="Main navigation"] {
 /* 12. Page Hero (inner pages)
    ------------------------------------------------------------ */
 .page-hero {
-    background: var(--color-linen);
+    --page-hero-bg: var(--color-linen);
+    --page-hero-circle: var(--color-coral-light);
+    background: var(--page-hero-bg);
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-2xl);
     position: relative;
@@ -755,7 +822,7 @@ nav[aria-label="Main navigation"] {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: var(--color-coral-light);
+    background: var(--page-hero-circle);
     opacity: 0.5;
     pointer-events: none;
     z-index: 0;
@@ -770,6 +837,22 @@ nav[aria-label="Main navigation"] {
 .page-hero .lead {
     max-width: 600px;
     color: var(--color-body);
+}
+
+/* Page Hero Variants */
+.page-hero--about {
+    --page-hero-bg: var(--color-blush);
+    --page-hero-circle: #FFE5D9;
+}
+
+.page-hero--services {
+    --page-hero-bg: var(--color-sage-light);
+    --page-hero-circle: var(--color-sky-light);
+}
+
+.page-hero--contact {
+    --page-hero-bg: var(--new-bg-periwinkle);
+    --page-hero-circle: var(--color-coral-light);
 }
 
 /* 13. Steps (What to expect)
@@ -897,7 +980,7 @@ nav[aria-label="Main navigation"] {
     display: flex;
     align-items: flex-start;
     gap: var(--space-lg);
-    padding: var(--space-lg) 0;
+    padding: var(--space-xs) 0;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -952,7 +1035,7 @@ nav[aria-label="Main navigation"] {
     margin: var(--space-lg) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-md);
 }
 
 .credentials-list li {
@@ -1027,15 +1110,14 @@ nav[aria-label="Main navigation"] {
 /* 16b. Quote Callout
    ------------------------------------------------------------ */
 .quote-callout {
-    background-color: var(--color-coral-light);
-    border-left: 3px solid var(--color-coral);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    padding: var(--space-lg) var(--space-xl);
-    margin: var(--space-xl) 0 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+    margin: 0;
     font-style: italic;
-    font-size: var(--text-md);
+    font-size: var(--text-lg);
     color: var(--color-text);
-    line-height: 1.7;
+    line-height: 1.8;
     quotes: none;
 }
 
