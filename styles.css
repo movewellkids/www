@@ -247,6 +247,14 @@ p {
     background-color: var(--color-surface);
 }
 
+.section--quote {
+    background-color: var(--color-surface);
+}
+
+.section--bio {
+    padding-bottom: 0;
+}
+
 .section--compact {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
@@ -541,7 +549,7 @@ nav[aria-label="Main navigation"] {
    ------------------------------------------------------------ */
 .card {
     background-color: var(--color-surface);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-card);
     padding: var(--space-lg);
     transition: transform var(--transition), box-shadow var(--transition);
@@ -617,6 +625,53 @@ nav[aria-label="Main navigation"] {
     margin-bottom: var(--space-lg);
 }
 
+/* Services Tab Control */
+.services-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: var(--space-xl);
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    border: 2px solid var(--color-coral);
+    border-radius: var(--radius-xl);
+    padding: 0.25rem;
+    background: transparent;
+}
+
+.services-tab-btn {
+    background: transparent;
+    border: none;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--color-muted);
+    cursor: pointer;
+    transition: all var(--transition);
+    border-radius: calc(var(--radius-xl));
+}
+
+.services-tab-btn:not(.services-tab-btn--active):hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.services-tab-btn--active {
+    background: var(--color-coral);
+    color: var(--color-surface);
+}
+
+.services-tab-btn--active:hover {
+    background: var(--color-coral);
+}
+
+.services-tab-content {
+    display: none;
+}
+
+.services-tab-content--active {
+    display: block;
+}
+
 /* Bento grid for babies */
 .services-bento {
     display: grid;
@@ -626,16 +681,23 @@ nav[aria-label="Main navigation"] {
 
 .bento-item {
     background: var(--color-surface);
-    border: 1px solid #EDE8E3;
-    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
     padding: var(--space-lg);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.bento-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-raised);
 }
 
 .bento-item h4 {
     font-weight: 700;
-    line-height: 2.5rem;
+    line-height: var(--text-2xl);
     color: var(--color-text);
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
 }
 
 .bento-item p {
@@ -647,7 +709,7 @@ nav[aria-label="Main navigation"] {
 .bento-item--large {
     grid-column: 1 / -1;
     background: var(--color-blush);
-    border-color: transparent;
+    border-color: var(--color-coral);
     padding: var(--space-lg);
 }
 
@@ -788,7 +850,7 @@ nav[aria-label="Main navigation"] {
     width: 100%;
     height: 420px;
     object-fit: cover;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-raised);
 }
 
@@ -807,30 +869,14 @@ nav[aria-label="Main navigation"] {
    ------------------------------------------------------------ */
 .page-hero {
     --page-hero-bg: var(--color-linen);
-    --page-hero-circle: var(--color-coral-light);
     background: var(--page-hero-bg);
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-2xl);
-    position: relative;
-    overflow: hidden;
 }
-.page-hero::after {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -15%;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: var(--page-hero-circle);
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 0;
-}
-.page-hero > * { position: relative; z-index: 1; }
 
 .page-hero h1 {
-    font-size: var(--text-3xl);
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    font-weight: 700;
     margin-bottom: var(--space-sm);
 }
 
@@ -841,18 +887,15 @@ nav[aria-label="Main navigation"] {
 
 /* Page Hero Variants */
 .page-hero--about {
-    --page-hero-bg: var(--color-blush);
-    --page-hero-circle: #FFE5D9;
+    --page-hero-bg: var(--new-bg-blush);
 }
 
 .page-hero--services {
-    --page-hero-bg: var(--color-sage-light);
-    --page-hero-circle: var(--color-sky-light);
+    --page-hero-bg: var(--new-bg-mint);
 }
 
 .page-hero--contact {
-    --page-hero-bg: var(--new-bg-periwinkle);
-    --page-hero-circle: var(--color-coral-light);
+    --page-hero-bg: var(--new-bg-sky);
 }
 
 /* 13. Steps (What to expect)
@@ -889,7 +932,7 @@ nav[aria-label="Main navigation"] {
 }
 
 .step h4 {
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-md);
     color: var(--color-text);
 }
 
@@ -1110,15 +1153,15 @@ nav[aria-label="Main navigation"] {
 /* 16b. Quote Callout
    ------------------------------------------------------------ */
 .quote-callout {
-    font-family: Georgia, 'Times New Roman', serif;
+    border-radius: var(--radius-xl);
     text-align: center;
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-xl) var(--space-xl);
     margin: 0;
-    font-style: italic;
     font-size: var(--text-lg);
     color: var(--color-text);
     line-height: 1.8;
     quotes: none;
+    background: var(--new-bg-blush);
 }
 
 /* 16c. Home Visit Note (Services page)
@@ -1391,7 +1434,7 @@ footer {
 
 .testimonial-card {
     background: var(--color-surface);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     padding: var(--space-xl);
     margin: 0;
     display: flex;
@@ -1833,6 +1876,64 @@ footer {
     text-decoration: none;
 }
 .sticky-mobile-cta.is-hidden { display: none !important; }
+
+/* Form Elements */
+.ds-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.ds-form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.ds-input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 0.85rem;
+    line-height: 1.5;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.ds-input:focus {
+    outline: none;
+    border-color: var(--color-sky);
+    box-shadow: 0 0 0 3px rgba(114, 144, 217, 0.15);
+}
+
+.ds-input::placeholder {
+    color: var(--color-muted);
+}
+
+textarea.ds-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select.ds-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8899' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
 
 /* H8 - Scroll animations */
 @media (prefers-reduced-motion: no-preference) {

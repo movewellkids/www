@@ -79,10 +79,8 @@
                         <li>West Norwood (SE27)</li>
                     </ul>
                     <p class="text-sm mt-lg">If you're outside the area covered, feel free to <a href="mailto:hello@movewellkids.co.uk" class="link-sky">get in touch</a> to see what we can do.</p>
-                </div>
 
-                <div>
-                    <h2 class="services-col-heading">Email</h2>
+                    <h2 class="services-col-heading" style="margin-top: var(--space-2xl);">Email</h2>
                     <div class="contact-item">
                         <div class="contact-item-icon">
                             <svg class="icon icon-md" style="color: var(--color-sky)"><use href="#icon-mail"/></svg>
@@ -92,6 +90,61 @@
                             <p class="mt-xs text-sm">We aim to respond within one working day.</p>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <h2 class="services-col-heading">Send us a message</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        <input type="hidden" name="access_key" value="6a54ba20-f6aa-484d-ac8e-a078866301cf">
+                        <input type="hidden" name="redirect" value="https://www.movewellkids.co.uk/thank-you.html">
+
+                        <div class="ds-form-field">
+                            <label for="name" class="ds-form-label">Name</label>
+                            <input type="text" id="name" name="name" required class="ds-input">
+                        </div>
+
+                        <div class="ds-form-field">
+                            <label for="email" class="ds-form-label">Email</label>
+                            <input type="email" id="email" name="email" required class="ds-input">
+                        </div>
+
+                        <div class="ds-form-field">
+                            <label for="service" class="ds-form-label">Which service are you interested in?</label>
+                            <select id="service" name="service" class="ds-input">
+                                <option value="">Choose a service…</option>
+                                <optgroup label="Infants">
+                                    <option>Head Turning Preference</option>
+                                    <option>Developmental Delay</option>
+                                    <option>Positional Talipes</option>
+                                    <option>Erb's Palsy</option>
+                                    <option>Baby MOT</option>
+                                </optgroup>
+                                <optgroup label="Children &amp; Teenagers">
+                                    <option>Musculoskeletal Pain &amp; Injury</option>
+                                    <option>Hypermobility</option>
+                                    <option>Gait Concerns</option>
+                                    <option>Chronic Pain</option>
+                                    <option>Juvenile Arthritis</option>
+                                    <option>Sports Injury</option>
+                                    <option>Postural Concerns</option>
+                                    <option>Post-Surgical Rehabilitation</option>
+                                </optgroup>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="ds-form-field">
+                            <label for="phone" class="ds-form-label">Phone (optional)</label>
+                            <input type="tel" id="phone" name="phone" class="ds-input">
+                        </div>
+
+                        <div class="ds-form-field">
+                            <label for="message" class="ds-form-label">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="ds-input"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
 
             </div>
