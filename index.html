@@ -36,9 +36,12 @@
     <link rel="humans" href="humans.txt">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="styles.css?v=20260330">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Inter:wght@400;500;600&display=swap"></noscript>
+    <link rel="preload" as="image" href="/images/movewell-hero-image.webp" imagesrcset="/images/movewell-hero-image.webp" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css?v=20260412">
     <title>Paediatric Physiotherapy Dulwich | MoveWell Kids</title>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20260412" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -145,7 +148,10 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/movewell-hero-image.jpeg" alt="A child jumping joyfully indoors, arms raised in celebration" width="900" height="500" loading="eager" class="hero-img">
+                    <picture>
+                        <source srcset="images/movewell-hero-image.webp" type="image/webp">
+                        <img src="images/movewell-hero-image.jpeg" alt="A child jumping joyfully indoors, arms raised in celebration" width="900" height="500" loading="eager" fetchpriority="high" class="hero-img">
+                    </picture>
                 </div>
             </div>
         </section>
@@ -209,14 +215,17 @@
                     <a href="about.html" class="btn btn-primary">About Rebecca</a>
                 </div>
                 <div>
-                    <img
-                        class="split-image"
-                        src="images/movewell-treatment.jpeg"
-                        alt="Physiotherapist working with a young child during a home session"
-                        width="700"
-                        height="420"
-                        loading="lazy"
-                    >
+                    <picture>
+                        <source srcset="images/movewell-treatment.webp" type="image/webp">
+                        <img
+                            class="split-image"
+                            src="images/movewell-treatment.jpeg"
+                            alt="Physiotherapist working with a young child during a home session"
+                            width="700"
+                            height="420"
+                            loading="lazy"
+                        >
+                    </picture>
                 </div>
             </div>
         </section>

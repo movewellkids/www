@@ -2,9 +2,8 @@
    MOVE WELL KIDS — Stylesheet
    ============================================================ */
 
-/* 1. Google Fonts
+/* 1. Google Fonts — loaded via <link rel="preload"> in each HTML page
    ------------------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Inter:wght@400;500;600&display=swap');
 
 /* 2. Design Tokens
    ------------------------------------------------------------ */
@@ -74,61 +73,12 @@
     /* Transitions */
     --transition: 0.2s ease;
 
-    /* ── New palette candidates (preview only — not yet applied to site) ── */
-
-    /* Background -50 array — all hsl(*°, ~45-65%, 97%) · 12 hues across full wheel */
-    --new-bg-blush:       #FBF4F5;  /* hsl(350, 50%, 97%) — warm rose */
-    --new-bg-coral:       #FCF6F4;  /* hsl( 15, 55%, 97%) — salmon */
-    --new-bg-peach:       #FCF8F4;  /* hsl( 28, 56%, 97%) — linen/peach */
-    --new-bg-amber:       #FCF9F3;  /* hsl( 40, 60%, 97%) — warm amber */
-    --new-bg-butter:      #FDFBF3;  /* hsl( 58, 70%, 97%) — pale yellow */
-    --new-bg-lime:        #F8FCF4;  /* hsl( 85, 50%, 97%) — very light green */
-    --new-bg-mint:        #F4FBF8;  /* hsl(155, 45%, 97%) — cool mint */
-    --new-bg-teal:        #F4FBFB;  /* hsl(175, 45%, 97%) — light teal */
-    --new-bg-sky:         #F4F8FC;  /* hsl(205, 50%, 97%) — pale blue */
-    --new-bg-periwinkle:  #F5F6FB;  /* hsl(230, 45%, 97%) — blue-purple */
-    --new-bg-lavender:    #F8F5FB;  /* hsl(270, 45%, 97%) — soft purple */
-    --new-bg-mauve:       #FBF5FA;  /* hsl(310, 45%, 97%) — pink-purple */
-
-    /* Primary hue options — paired with bg-* array · bumped saturation + brightness */
-    --new-primary-blush:       #D40D2F;  /* hsl(350°) vivid rose */
-    --new-primary-coral:       #D44010;  /* hsl( 15°) vivid burnt coral */
-    --new-primary-peach:       #D46800;  /* hsl( 28°) vivid warm orange */
-    --new-primary-amber:       #C48C00;  /* hsl( 40°) vivid golden amber */
-    --new-primary-butter:      #F2C200;  /* hsl( 48°) vivid sunny yellow — use dark text */
-    --new-primary-lime:        #4A9200;  /* hsl( 87°) vivid leaf green */
-    --new-primary-mint:        #008A56;  /* hsl(155°) vivid emerald */
-    --new-primary-teal:        #008A8A;  /* hsl(180°) vivid teal */
-    --new-primary-sky:         #0074CC;  /* hsl(210°) vivid blue */
-    --new-primary-periwinkle:  #3650D6;  /* hsl(231°) vivid indigo */
-    --new-primary-lavender:    #7840D6;  /* hsl(269°) vivid purple */
-    --new-primary-mauve:       #B81898;  /* hsl(310°) vivid plum */
-
-    /* Linen scale — warm neutral, hsl(28°) */
-    --new-linen-50:   #FCF8F4;
-    --new-linen-100:  #F7EEE3;
-    --new-linen-200:  #EDDAC9;
-    --new-linen-300:  #DFC3AA;
-    --new-linen-400:  #CDA684;
-    --new-linen-500:  #B9875B;
-    --new-linen-600:  #986B44;
-    --new-linen-700:  #725237;
-    --new-linen-800:  #513C29;
-    --new-linen-900:  #34281D;
-    --new-linen-950:  #1D1611;
-
-    /* Primary scale — crimson, hsl(340°) */
-    --new-primary-50:  #FAF5F7;
-    --new-primary-100: #F5E6EB;
-    --new-primary-200: #EFC8D5;
-    --new-primary-300: #EA86A7;
-    --new-primary-400: #EE2B6C;
-    --new-primary-500: #CC0044;
-    --new-primary-600: #A30036;
-    --new-primary-700: #85002C;
-    --new-primary-800: #720026;
-    --new-primary-900: #4D001A;
-    --new-primary-950: #2E000F;
+    /* ── Background tones (used in page hero variants and inline styles) ── */
+    --new-bg-blush:       #FBF4F5;
+    --new-bg-peach:       #FCF8F4;
+    --new-bg-mint:        #F4FBF8;
+    --new-bg-sky:         #F4F8FC;
+    --new-bg-periwinkle:  #F5F6FB;
 }
 
 /* 3. Reset & Normalize
