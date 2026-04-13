@@ -1,0 +1,7 @@
+# MoveWell Kids Physiotherapy robots.txt
+User-agent: *
+Allow: /
+Disallow: /design-system.html
+
+# Sitemaps
+Sitemap: https://www.movewellkids.co.uk/sitemap.xml
