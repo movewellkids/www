@@ -1330,6 +1330,31 @@ footer {
     color: rgba(255, 255, 255, 0.4);
 }
 
+.footer-credentials {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: var(--space-lg) auto 0;
+    background: white;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: 12px;
+}
+
+.credential-logo {
+    max-height: 70px;
+    width: auto;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.credential-logo:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
 /* Grid layout modifier — mobile first (base is single column) */
 .grid-2--thirds {
     grid-template-columns: 1fr;
