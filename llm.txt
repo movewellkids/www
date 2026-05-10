@@ -8,18 +8,19 @@ Rebecca is a specialist paediatric physiotherapist with more than 15 years of cl
 
 ## Services
 
-- **Musculoskeletal Pain & Injury** — Assessment and treatment of joint, muscle and soft tissue pain, including growth-related conditions such as calcaneal apophysitis (Sever's) and tibial tuberosity apophysitis (Osgood-Schlatter's)
-- **Developmental Delay** — Support for children not meeting expected physical milestones
-- **Baby MOT** — Personalised developmental screening for babies, including musculoskeletal and neurological profile review
-- **Torticollis & Plagiocephaly** — Assessment and treatment for babies with a head turning preference, torticollis or flat head
-- **Hypermobility & EDS** — Physiotherapy for hypermobile children and teenagers, including those with Ehlers-Danlos Syndrome
-- **Gait Abnormalities** — Assessment of toe walking, in-toeing, out-toeing and other gait concerns
-- **Sports Injuries** — Rehabilitation for young athletes returning to sport after injury
-- **Chronic Pain** — Management of persistent pain conditions in children and teenagers
-- **Juvenile Arthritis** — Physiotherapy support for children with JIA and other inflammatory conditions
-- **Postural Assessment** — Evaluation and treatment of postural concerns
-- **Positional Talipes** — Treatment for foot position concerns in newborns
-- **Post-Surgical Rehabilitation** — Physiotherapy following orthopaedic or other surgery
+- **Musculoskeletal Pain & Injury** — Assessment and treatment of joint, muscle and soft tissue pain (also: growing pains, benign limb pains of childhood, heel pain in children, knee pain in growing teens), including growth-related conditions such as calcaneal apophysitis (Sever's) and tibial tuberosity apophysitis (Osgood-Schlatter's)
+- **Developmental Delay** — Support for children not meeting expected physical milestones (also: gross motor delay, global developmental delay (GDD), motor milestone delay)
+- **Baby MOT** — Personalised developmental screening for babies (also: baby development check, infant development assessment, newborn physical screening), including musculoskeletal and neurological profile review
+- **Torticollis & Plagiocephaly** — Assessment and treatment for babies with a head turning preference, torticollis (wry neck, twisted neck) or flat head (plagiocephaly, brachycephaly, flat head syndrome, preferential head position)
+- **Hypermobility & EDS** — Physiotherapy for hypermobile children and teenagers (also: double-jointed, joint laxity, loose joints, bendy joints), including hypermobility spectrum disorder (HSD), hEDS, Ehlers-Danlos Syndrome
+- **Gait Abnormalities** — Assessment of toe walking (idiopathic toe walking, equinus gait), in-toeing (pigeon toed, femoral anteversion, internal tibial torsion, metatarsus adductus), out-toeing (duck-footed, femoral retroversion, external tibial torsion) and other gait concerns
+- **Sports Injuries** — Rehabilitation for young athletes returning to sport after injury (also: youth sports injury, return-to-sport rehab, paediatric sports physiotherapy)
+- **Chronic Pain** — Management of persistent pain conditions in children and teenagers (also: paediatric pain, complex regional pain syndrome (CRPS), amplified musculoskeletal pain)
+- **Juvenile Arthritis** — Physiotherapy support for children with juvenile idiopathic arthritis (JIA, juvenile rheumatoid arthritis) and other inflammatory conditions
+- **Postural Assessment** — Evaluation and treatment of postural concerns including scoliosis (curved spine), kyphosis (hunched back, rounded upper back), bow legs (genu varum), and knock knees (genu valgum)
+- **Positional Talipes** — Treatment for foot position concerns in newborns (also: positional clubfoot, foot turning in baby, curly foot)
+- **Post-Surgical Rehabilitation** — Physiotherapy following orthopaedic or other surgery (also: post-operative physiotherapy, post-op rehab, orthopaedic rehab)
+- **Erb's Palsy** — Targeted exercise programmes to improve arm movement, strength and function (also: brachial plexus injury, neonatal brachial plexus palsy, birth-related arm weakness)
 
 ## Pricing & Sessions
 
