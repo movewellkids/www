@@ -1947,3 +1947,51 @@ select.ds-input {
     .page-hero::after { display: none; }
 }
 
+/* Affiliates page — scoped tweaks on top of .card */
+.affiliate-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.affiliate-card__media {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-blush);
+    margin-bottom: var(--space-sm);
+}
+
+.affiliate-card__media img,
+.affiliate-card__media svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.affiliate-card__name {
+    margin: 0;
+    font-size: var(--text-lg);
+}
+
+.affiliate-card__role {
+    margin: 0;
+    color: var(--color-coral);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.affiliate-card__bio {
+    color: var(--color-muted);
+    margin: 0;
+}
+
+.affiliate-card__link {
+    margin-top: auto;
+}
+
