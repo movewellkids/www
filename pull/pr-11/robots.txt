@@ -1,0 +1,23 @@
+# MoveWell Kids Physiotherapy robots.txt
+User-agent: *
+Allow: /
+Disallow: /design-system.html
+
+# AI crawlers — explicitly allowed for AI search visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Sitemaps
+Sitemap: https://movewellkids.co.uk/sitemap.xml

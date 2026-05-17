@@ -1,0 +1,13 @@
+/* TEAM */
+Name: MoveWell Kids Physiotherapy
+Site: movewellkids.co.uk
+Email: hello@movewellkids.co.uk
+Location: Dulwich, South London, UK
+
+/* THANKS */
+Thanks for visiting!
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: Semantic HTML, Accessible Navigation
+Hosting: GitHub Pages
