@@ -93,6 +93,47 @@ if (navToggle && mainNav) {
 })();
 
 // =============================================================================
+// Condition dialogs (services + homepage cards)
+// =============================================================================
+(function () {
+  const html = document.documentElement;
+  const siteHeader = document.getElementById('site-header');
+
+  function openDialog(dialog) {
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    // Measure header height so the body padding (compensating for the header
+    // being switched to position:fixed) and the backdrop top offset both match.
+    if (siteHeader) {
+      html.style.setProperty('--header-h', siteHeader.offsetHeight + 'px');
+    }
+    html.classList.add('dialog-open');
+    dialog.showModal();
+  }
+
+  function closeDialog() {
+    html.classList.remove('dialog-open');
+    html.style.removeProperty('--header-h');
+  }
+
+  document.querySelectorAll('[data-condition]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const dialog = document.getElementById('condition-' + trigger.dataset.condition);
+      openDialog(dialog);
+    });
+  });
+
+  document.querySelectorAll('.condition-dialog').forEach(dialog => {
+    const closeBtn = dialog.querySelector('.condition-dialog__close');
+    if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', e => {
+      if (e.target === dialog) dialog.close();
+    });
+    // Native close event fires for ESC, .close(), and backdrop click via above
+    dialog.addEventListener('close', closeDialog);
+  });
+})();
+
+// =============================================================================
 // Scroll-triggered entrance animations
 // =============================================================================
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
