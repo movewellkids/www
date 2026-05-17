@@ -451,6 +451,11 @@ nav[aria-label="Main navigation"] {
     margin-bottom: 1rem;
 }
 
+.hero-content h1 {
+    font-size: clamp(1.5rem, 3vw, 2.125rem);
+    font-weight: 700;
+}
+
 .hero-content .lead {
     margin-bottom: var(--space-xl);
     max-width: 480px;

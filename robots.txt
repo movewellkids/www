@@ -19,8 +19,5 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# AI agent discovery
-# LLM-friendly summary: https://movewellkids.co.uk/llm.txt
-
 # Sitemaps
 Sitemap: https://movewellkids.co.uk/sitemap.xml

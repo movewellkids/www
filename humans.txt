@@ -1,7 +1,7 @@
 /* TEAM */
 Name: MoveWell Kids Physiotherapy
 Site: movewellkids.co.uk
-Email: admin@movewellkids.co.uk
+Email: hello@movewellkids.co.uk
 Location: Dulwich, South London, UK
 
 /* THANKS */
