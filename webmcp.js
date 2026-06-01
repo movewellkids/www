@@ -147,7 +147,7 @@
   const tools = [
     {
       name: 'list_services',
-      description: "List the paediatric physiotherapy services MoveWell Kids offers. Optionally filter by age group ('infant' or 'child-teen') or a free-text keyword.",
+      description: "List the paediatric physiotherapy services MoveWell Kids offers. MoveWell Kids treats babies, children and teenagers only (ages 0–18); it does not see adults. Optionally filter by age group ('infant' or 'child-teen') or a free-text keyword.",
       inputSchema: {
         type: 'object',
         properties: {
@@ -172,7 +172,7 @@
     },
     {
       name: 'find_condition',
-      description: 'Check whether MoveWell Kids treats a specific condition, symptom or diagnosis (e.g. "toe walking", "Sever\'s disease", "flat head") and find which service it falls under.',
+      description: 'Check whether MoveWell Kids treats a specific condition, symptom or diagnosis (e.g. "toe walking", "Sever\'s disease", "flat head") and find which service it falls under. MoveWell Kids only treats babies, children and teenagers (ages 0–18), not adults.',
       inputSchema: {
         type: 'object',
         properties: {
