@@ -201,6 +201,27 @@
       name: 'get_pricing',
       description: 'Get session types, durations, fees, ages seen and referral requirements for MoveWell Kids paediatric physiotherapy.',
       inputSchema: { type: 'object', properties: {} },
+      outputSchema: {
+        type: 'object',
+        properties: {
+          sessions: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                name: { type: 'string' },
+                minutes: { type: 'number' }
+              },
+              required: ['name', 'minutes']
+            }
+          },
+          feeRange: { type: 'string' },
+          agesSeen: { type: 'string' },
+          gpReferralRequired: { type: 'boolean' },
+          homeVisitsOnly: { type: 'boolean' }
+        },
+        required: ['sessions', 'feeRange', 'agesSeen', 'gpReferralRequired', 'homeVisitsOnly']
+      },
       async execute() {
         const lines = [
           'Sessions:',
@@ -210,7 +231,16 @@
           `GP referral: ${PRICING.gpReferralRequired ? 'required' : 'not required'}`,
           'All sessions are home visits.'
         ];
-        return text(lines.join('\n'));
+        return {
+          content: [{ type: 'text', text: lines.join('\n') }],
+          structuredContent: {
+            sessions: PRICING.sessions,
+            feeRange: PRICING.feeRange,
+            agesSeen: PRICING.agesSeen,
+            gpReferralRequired: PRICING.gpReferralRequired,
+            homeVisitsOnly: true
+          }
+        };
       }
     },
     {
@@ -223,10 +253,33 @@
         },
         required: ['area']
       },
+      outputSchema: {
+        type: 'object',
+        properties: {
+          query: { type: 'string' },
+          covered: { type: 'boolean' },
+          matchedBy: { type: 'string', enum: ['district', 'area', 'none'] },
+          region: { type: 'string' },
+          coveredAreas: { type: 'array', items: { type: 'string' } },
+          coveredDistricts: { type: 'array', items: { type: 'string' } }
+        },
+        required: ['query', 'covered', 'matchedBy', 'region', 'coveredAreas', 'coveredDistricts']
+      },
       async execute({ area } = {}) {
         const a = norm(area);
         const coveredList = `Covered areas: ${COVERAGE.areas.join(', ')} (${COVERAGE.districts.join(', ')}) in ${COVERAGE.region}.`;
-        if (!a) return text('Please provide a postcode or area name. ' + coveredList);
+        const base = {
+          query: area == null ? '' : String(area),
+          region: COVERAGE.region,
+          coveredAreas: COVERAGE.areas,
+          coveredDistricts: COVERAGE.districts
+        };
+        const result = (covered, matchedBy, msg) => ({
+          content: [{ type: 'text', text: msg }],
+          structuredContent: Object.assign({ covered, matchedBy }, base)
+        });
+
+        if (!a) return result(false, 'none', 'Please provide a postcode or area name. ' + coveredList);
 
         // Postcode outward-code match (e.g. "se23 3pq" -> "SE23")
         const outward = (a.match(/se\s?\d{1,2}/) || [])[0];
@@ -235,9 +288,9 @@
         const byArea = COVERAGE.areas.some(name => a.includes(norm(name)) || norm(name).includes(a));
 
         if (byDistrict || byArea) {
-          return text(`Yes — home visits are available in ${area}. ${coveredList}`);
+          return result(true, byDistrict ? 'district' : 'area', `Yes — home visits are available in ${area}. ${coveredList}`);
         }
-        return text(`${area} isn't in the standard home-visit area, but you're welcome to email ${CONTACT.email} to ask. ${coveredList}`);
+        return result(false, 'none', `${area} isn't in the standard home-visit area, but you're welcome to email ${CONTACT.email} to ask. ${coveredList}`);
       }
     },
     {
