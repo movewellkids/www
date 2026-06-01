@@ -47,6 +47,16 @@ Home visits across: East Dulwich, Dulwich Village, West Dulwich, Herne Hill, Tul
 - Email: hello@movewellkids.co.uk
 - Website: https://movewellkids.co.uk
 
+## Agent Tools (WebMCP)
+
+Every page exposes structured tools via the proposed WebMCP standard (`navigator.modelContext`), so agents can query the practice directly instead of parsing the page. The tools are feature-detected and inert where WebMCP is unsupported.
+
+- **list_services** — List the services offered. Optional filters: `ageGroup` ("infant" or "child-teen") or a free-text `keyword`.
+- **find_condition** — Check whether a specific condition, symptom or diagnosis (e.g. "toe walking", "Sever's") is treated and which service covers it. Input: `query`.
+- **get_pricing** — Session types, durations, fees, ages seen and referral requirements. No input.
+- **check_coverage** — Check whether home visits reach a given postcode or place name. Input: `area`.
+- **start_enquiry** — Compose a pre-filled email enquiry and open the user's email client to review and send (does not send automatically). Inputs: `name`, `email`, `message`, optional `childAge` and `service`.
+
 ## Pages
 
 - [Home](https://movewellkids.co.uk/) — Overview of services and approach
