@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>web3forms delivery test</title>
+  <style>
+    body { font: 16px/1.5 system-ui, sans-serif; max-width: 32rem; margin: 3rem auto; padding: 0 1rem; }
+    label { display: block; margin: 1rem 0 .25rem; font-weight: 600; }
+    input, textarea { width: 100%; padding: .6rem; box-sizing: border-box; }
+    button { margin-top: 1.25rem; padding: .7rem 1.4rem; font-size: 1rem; cursor: pointer; }
+    .note { background: #f3f6fb; padding: 1rem; border-radius: 8px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <h1>Delivery test — web3forms → inbox</h1>
+  <p class="note">Temporary page. Submit this once in your normal browser, then check the
+  <strong>hello@movewellkids.co.uk</strong> inbox <em>and Junk folder</em> for a message with
+  subject starting <strong>“TEST — web3forms delivery check”</strong>. Then tell Claude the result and this page will be deleted.</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="6a54ba20-f6aa-484d-ac8e-a078866301cf">
+    <input type="hidden" name="subject" value="TEST — web3forms delivery check">
+    <input type="hidden" name="from_name" value="MoveWell Kids Website">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" value="Delivery Test" required>
+
+    <label for="email">Email (becomes Reply-To)</label>
+    <input id="email" type="email" name="email" value="test@movewellkids.co.uk" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required>Automated delivery test. Checking whether web3forms notifications reach the iCloud inbox. Please ignore.</textarea>
+
+    <button type="submit">Send test submission</button>
+  </form>
+</body>
+</html>
