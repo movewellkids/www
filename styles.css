@@ -1531,6 +1531,16 @@ footer {
     }
 }
 
+/* Contact page: two columns on desktop — areas left, form right.
+   The max-width: 768px block below overrides this to a single column
+   with the form first on mobile, so this rule must precede it. */
+.contact-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
 @media (max-width: 768px) {
     :root {
         --space-3xl: 4rem;
