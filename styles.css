@@ -1341,7 +1341,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: fit-content;
-    margin: var(--space-lg) auto 0;
+    margin: var(--space-lg) 0 0 auto;
     background: white;
     padding: var(--space-lg) var(--space-xl);
     border-radius: 12px;
@@ -1696,6 +1696,10 @@ footer {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+
+    .footer-credentials {
+        margin-left: auto;
     }
 }
 
