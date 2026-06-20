@@ -1576,6 +1576,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    /* Contact page: form first on mobile, before "Areas covered" content */
+    .contact-section-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2xl);
+    }
+    .contact-form-col {
+        order: -1;
+    }
+
     .values-row {
         gap: var(--space-xl);
     }

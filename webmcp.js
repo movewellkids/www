@@ -38,11 +38,11 @@
   // Home-visit coverage. `districts` are SE outward codes; `areas` are place
   // names. check_coverage matches against both.
   const COVERAGE = {
-    districts: ['SE19', 'SE21', 'SE22', 'SE23', 'SE24', 'SE27'],
+    districts: ['SE15', 'SE19', 'SE21', 'SE22', 'SE23', 'SE24', 'SE27'],
     areas: [
       'East Dulwich', 'Dulwich Village', 'West Dulwich', 'Herne Hill',
       'Tulse Hill', 'West Norwood', 'Gipsy Hill', 'Crystal Palace',
-      'Forest Hill'
+      'Forest Hill', 'Peckham'
     ],
     region: 'South London',
     note: 'and surrounding areas'
