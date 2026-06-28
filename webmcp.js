@@ -1,7 +1,7 @@
 // =============================================================================
 // WebMCP agent tools  —  https://github.com/webmachinelearning/webmcp
 // -----------------------------------------------------------------------------
-// Exposes MoveWell Kids' services, pricing, coverage area and contact path as
+// Exposes MoveWellKids' services, pricing, coverage area and contact path as
 // structured tools that AI agents can call directly, instead of inferring them
 // from the DOM. Feature-detected: inert in browsers that don't support WebMCP.
 //
@@ -147,7 +147,7 @@
   const tools = [
     {
       name: 'list_services',
-      description: "List the paediatric physiotherapy services MoveWell Kids offers. MoveWell Kids treats babies, children and teenagers only (ages 0–18); it does not see adults. Optionally filter by age group ('infant' or 'child-teen') or a free-text keyword.",
+      description: "List the paediatric physiotherapy services MoveWellKids offers. MoveWellKids treats babies, children and teenagers only (ages 0–18); it does not see adults. Optionally filter by age group ('infant' or 'child-teen') or a free-text keyword.",
       inputSchema: {
         type: 'object',
         properties: {
@@ -166,13 +166,13 @@
             s.aka.some(a => norm(a).includes(k))
           );
         }
-        if (!list.length) return text('No matching services found. MoveWell Kids may still be able to help — email ' + CONTACT.email + ' to ask.');
+        if (!list.length) return text('No matching services found. MoveWellKids may still be able to help — email ' + CONTACT.email + ' to ask.');
         return text(list.map(serviceLine).join('\n'));
       }
     },
     {
       name: 'find_condition',
-      description: 'Check whether MoveWell Kids treats a specific condition, symptom or diagnosis (e.g. "toe walking", "Sever\'s disease", "flat head") and find which service it falls under. MoveWell Kids only treats babies, children and teenagers (ages 0–18), not adults.',
+      description: 'Check whether MoveWellKids treats a specific condition, symptom or diagnosis (e.g. "toe walking", "Sever\'s disease", "flat head") and find which service it falls under. MoveWellKids only treats babies, children and teenagers (ages 0–18), not adults.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -189,7 +189,7 @@
           s.aka.some(a => norm(a).includes(q) || q.includes(norm(a)))
         );
         if (!matches.length) {
-          return text(`"${query}" isn't listed among the named conditions, but MoveWell Kids treats a broad range of paediatric musculoskeletal and developmental presentations. Email ${CONTACT.email} to check.`);
+          return text(`"${query}" isn't listed among the named conditions, but MoveWellKids treats a broad range of paediatric musculoskeletal and developmental presentations. Email ${CONTACT.email} to check.`);
         }
         return text(
           `Yes — "${query}" is treated under:\n` +
@@ -199,7 +199,7 @@
     },
     {
       name: 'get_pricing',
-      description: 'Get session types, durations, fees, ages seen and referral requirements for MoveWell Kids paediatric physiotherapy.',
+      description: 'Get session types, durations, fees, ages seen and referral requirements for MoveWellKids paediatric physiotherapy.',
       inputSchema: { type: 'object', properties: {} },
       outputSchema: {
         type: 'object',
@@ -245,7 +245,7 @@
     },
     {
       name: 'check_coverage',
-      description: 'Check whether MoveWell Kids offers home visits to a given area or postcode in South London.',
+      description: 'Check whether MoveWellKids offers home visits to a given area or postcode in South London.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -295,7 +295,7 @@
     },
     {
       name: 'start_enquiry',
-      description: "Start a booking/enquiry. Composes a pre-filled email to MoveWell Kids and opens the user's email client for them to review and send. Does not send automatically.",
+      description: "Start a booking/enquiry. Composes a pre-filled email to MoveWellKids and opens the user's email client for them to review and send. Does not send automatically.",
       inputSchema: {
         type: 'object',
         properties: {
