@@ -26,9 +26,9 @@
 
   const PRICING = {
     sessions: [
-      { name: 'New patient assessment', minutes: 60 },
-      { name: 'Follow-up session', minutes: 45 },
-      { name: 'Short follow-up', minutes: 30 }
+      { name: 'New patient assessment', minutes: '45–60' },
+      { name: 'Follow-up session', minutes: '45' },
+      { name: 'Short follow-up', minutes: '30' }
     ],
     feeRange: '£75–£120 per session',
     agesSeen: 'birth to 18 years',
@@ -210,7 +210,7 @@
               type: 'object',
               properties: {
                 name: { type: 'string' },
-                minutes: { type: 'number' }
+                minutes: { type: 'string' }
               },
               required: ['name', 'minutes']
             }
