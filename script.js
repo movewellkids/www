@@ -115,12 +115,14 @@ if (navToggle && mainNav) {
     html.style.removeProperty('--header-h');
   }
 
-  document.querySelectorAll('[data-condition]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const dialog = document.getElementById('condition-' + trigger.dataset.condition);
-      openDialog(dialog);
-    });
-  });
+  // Condition dialogs temporarily disabled: tapping a service tile no longer
+  // opens its dialog. Re-enable by uncommenting the trigger wiring below.
+  // document.querySelectorAll('[data-condition]').forEach(trigger => {
+  //   trigger.addEventListener('click', () => {
+  //     const dialog = document.getElementById('condition-' + trigger.dataset.condition);
+  //     openDialog(dialog);
+  //   });
+  // });
 
   document.querySelectorAll('.condition-dialog').forEach(dialog => {
     const closeBtn = dialog.querySelector('.condition-dialog__close');
