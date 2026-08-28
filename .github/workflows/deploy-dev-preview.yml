@@ -1,0 +1,67 @@
+name: Deploy dev preview
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+concurrency:
+  group: dev-preview
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: src
+
+      - name: Build preview tree
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          rsync -a \
+            --exclude='.git' --exclude='.github' --exclude='node_modules' \
+            --exclude='.claude' --exclude='gsc_coverage' \
+            --exclude='*.zip' --exclude='movewellkids.co.uk-Coverage-*' \
+            --exclude='server.log' --exclude='package*.json' --exclude='.DS_Store' \
+            --exclude='CNAME' \
+            src/ out/
+
+          # Path rewrite: the preview is served at /www-dev/, so absolute
+          # asset paths need that prefix. Pattern only matches paths that
+          # start with `"/` (slash immediately after the quote), so full
+          # https:// URLs are untouched.
+          find out -type f -name '*.html' -exec sed -i \
+            -e 's|href="/|href="/www-dev/|g' \
+            -e 's|src="/|src="/www-dev/|g' \
+            {} +
+
+          # Inject noindex on every preview page.
+          find out -type f -name '*.html' -exec sed -i \
+            -e 's|<meta name="robots" content="index,follow">|<meta name="robots" content="noindex,nofollow">|g' \
+            {} +
+
+          # Belt-and-braces robots.txt — block everything in the preview repo.
+          printf 'User-agent: *\nDisallow: /\n' > out/robots.txt
+
+          # Stamp the build so you can verify which dev sha is live.
+          echo "$GITHUB_SHA" > out/.deployed-sha
+          touch out/.nojekyll
+
+      - name: Push to www-dev/main
+        env:
+          DEV_PREVIEW_TOKEN: ${{ secrets.DEV_PREVIEW_TOKEN }}
+        run: |
+          cd out
+          git init -q -b main
+          git config user.name "movewellkids-bot"
+          git config user.email "noreply@movewellkids.co.uk"
+          git add -A
+          git commit -q -m "Deploy dev@${GITHUB_SHA::7}"
+          git push --force \
+            "https://x-access-token:${DEV_PREVIEW_TOKEN}@github.com/movewellkids/www-dev.git" \
+            main
